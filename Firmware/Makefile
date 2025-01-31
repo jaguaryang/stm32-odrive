@@ -70,6 +70,13 @@ flash-stlink2: all
 		-c 'reset run' \
 		-c exit
 
+flash-dap: 
+	openocd -f interface/cmsis-dap.cfg $(PROGRAMMER_CMD) -f target/stm32f4x.cfg -c init \
+		-c 'reset halt' \
+		-c 'flash write_image erase build/ODriveFirmware_v3.6-56V_0.5.1.hex' \
+		-c 'reset run' \
+		-c exit
+
 gdb-stlink2:
 	$(GDB) $(FIRMWARE)
 
