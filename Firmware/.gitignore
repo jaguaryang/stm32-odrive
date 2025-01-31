@@ -1,7 +1,7 @@
 
 #build folder
 autogen/
-build/
+build/obj
 deploy/
 .dep/
 tup_build.sh
